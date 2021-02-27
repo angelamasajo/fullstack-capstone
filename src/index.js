@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const FILES = [
+  {
+    "name": "Monstera Deliciosa",
+    "plantType": "Tropical",
+    "toxicity": "Toxic",
+    "careDetails": "Here's the care detail for the monstera"
+  },
+  {
+    "name": "Monstera Adansonii",
+    "plantType": "Tropical",
+    "toxicity": "Toxic",
+    "careDetails": "Here's the care detail for the monstera adansonii"
+  },
+  {
+    "name": "Christmas Cactus",
+    "plantType": "Holiday",
+    "toxicity": "Non-toxic",
+    "careDetails": "Here's the care detail for the christmas cactus"
+  },
+  {
+    "name": "Golden Pothos",
+    "plantType": "Trailing",
+    "toxicity": "Toxic",
+    "careDetails": "Here's the care detail for the golden pothos"
+  },
+];
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<App files={FILES}/>, document.getElementById('root'));
