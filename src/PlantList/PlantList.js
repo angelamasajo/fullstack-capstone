@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import './PlantList.css'; //add css
-import PlantListItem from './PlantListItem/PlantListItem';
+import PlantListItem from '../PlantListItem/PlantListItem';
 
 class PlantList extends Component {
   render () {
@@ -8,7 +8,10 @@ class PlantList extends Component {
       .map((file, key) => <PlantListItem {...file} key={key} />)
     return (
       <div className="PlantList">
-        {list}
+        <fieldset>
+          <legend>Results</legend>
+          {list}
+        </fieldset>
       </div>
     )
   }

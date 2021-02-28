@@ -7,70 +7,66 @@ class FilterOptions extends Component {
       <div className="FilterOptions">
         
         <div className="Filtering_Type">
-          <div className="FilterOption__type">
-            <label htmlFor="filter_all">
-              <input type="radio" value="all" id="filter_all" name="filter"/>
+          <form>
+          <fieldset>
+            <legend>Plant Type</legend>
+
+            <label htmlFor="filter_allTypes">
+              <input type="radio" value="all" id="filter_allTypes" name="filterType"/>
               All
             </label>
-          </div>
 
-          <div className="FilterOption__type">
             <label htmlFor="filter_succulent">
-              <input type="radio" value="succulent" id="filter_succulent" name="filter"/>
+              <input type="radio" value="succulent" id="filter_succulent" name="filterType"/>
               Succulent
             </label>
-          </div>
 
-          <div className="FilterOption__type">
             <label htmlFor="filter_tropical">
-              <input type="radio" value="tropical" id="filter_tropical" name="filter"/>
+              <input type="radio" value="tropical" id="filter_tropical" name="filterType"/>
               Tropical
             </label>
-          </div>
 
-          <div className="FilterOption__type">
             <label htmlFor="filter_holiday">
-              <input type="radio" value="holiday" id="filter_holiday" name="filter"/>
+              <input type="radio" value="holiday" id="filter_holiday" name="filterType"/>
               Holiday
             </label>
-          </div>
 
-          <div className="FilterOption__type">
             <label htmlFor="filter_trailing">
-              <input type="radio" value="trailing" id="filter_trailing" name="filter"/>
+              <input type="radio" value="trailing" id="filter_trailing" name="filterType"/>
               Trailing
             </label>
-          </div>
 
-          <div className="FilterOption__type">
             <label htmlFor="filter_other">
-              <input type="radio" value="other" id="filter_other" name="filter"/>
+              <input type="radio" value="other" id="filter_other" name="filterType"/>
               Other
             </label>
-          </div>
+          </fieldset>
+          </form>
         </div>
 
         <div className="Filtering_Toxicity">
-          <div className="FilterOption__toxicity">
-            <label htmlFor="filter_all">
-              <input type="radio" value="all" id="filter_all" name="filter"/>
+          <form>
+          <fieldset>
+
+            <legend>Toxicity</legend>
+
+            <label htmlFor="filter_allToxicity">
+              <input type="radio" value="all" id="filter_allToxicity" name="filterToxicity"/>
               All
             </label>
-          </div>   
 
-          <div className="FilterOption__toxicity">
+
             <label htmlFor="filter_toxic">
-              <input type="radio" value="toxic" id="filter_toxic" name="filter"/>
+              <input type="radio" value="toxic" id="filter_toxic" name="filterToxicity"/>
               Toxic
             </label>
-          </div>          
 
-          <div className="FilterOption__toxicity">
             <label htmlFor="filter_nontoxic">
-              <input type="radio" value="nontoxic" id="filter_nontoxic" name="filter"/>
+              <input type="radio" value="nontoxic" id="filter_nontoxic" name="filterToxicity"/>
               Non-toxic
             </label>
-          </div>   
+          </fieldset>
+          </form>
         </div>
 
       </div>
