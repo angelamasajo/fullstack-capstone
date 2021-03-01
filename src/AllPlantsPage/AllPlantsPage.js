@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PlantList from '../PlantList/PlantList'
 import SearchFilter from '../SearchFilter/SearchFilter'
+import FILES from '../dummy-store'
 
 class AllPlantsPage extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class AllPlantsPage extends Component {
           handleFilterChange={option => this.updateFilterOption(option)}
         />
         <PlantList 
-          files={this.props.files}
+          files={FILES}
           searchTerm={this.state.searchTerm}
           filterOption={this.state.filterOption}
         />

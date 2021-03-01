@@ -1,0 +1,16 @@
+
+.NavBar a,
+.NavBar a:active,
+.NavBar a:focus,
+.NavBar a:visited {
+  color: #ececea;
+}
+
+.NavBar a:hover {
+  color: #ffffff;
+  text-decoration: solid;
+}
+
+.NavBar a:not(:last-of-type) {
+  margin-right: 32px;
+}
