@@ -7,10 +7,10 @@ class LoginPage extends Component {
         <form>
           <fieldset>
             <legend>Log In</legend>
-            <label>Username</label>
-            <input/><br/>
-            <label>Password</label>
-            <input/><br/>
+            <label htmlFor='username'>Username</label>
+            <input name='username' id='username'/><br/>
+            <label htmlFor='password'>Password</label>
+            <input name='password' id='password'/><br/>
             <button>
               SUBMIT
             </button>

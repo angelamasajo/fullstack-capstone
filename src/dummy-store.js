@@ -27,6 +27,13 @@ const FILES = [
     toxicity: "Toxic",
     careDetails: "Here's the care detail for the golden pothos",
   },
+  {
+    id: 5,
+    name: "Zamioculcas Zamiifolia",
+    plantType: "Other",
+    toxicity: "Toxic",
+    careDetails: "Here's the care detail for the ZZ plant",
+  },
 ]
 
 export default FILES;

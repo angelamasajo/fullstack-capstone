@@ -66,7 +66,7 @@ class AddPlant extends Component {
 
           </section>
 
-          <section className="form-section plant-type-section">
+          <section className="form-section plant-toxicity-section">
             <h2>Toxicity</h2>
             <input type="radio" name="plant-type" id="plant-type-toxic" className="plant-type-radio" />
             <label htmlFor="plant-type-toxic">

@@ -4,7 +4,10 @@ import PlantListItem from '../PlantListItem/PlantListItem';
 
 class PlantList extends Component {
   render () {
+    const { searchTerm, filterOption } = this.props;
     const list = this.props.files
+      .filter(file => file.name.includes(searchTerm)
+        && (filterOption === 'All' || file.status === filterOption))
       .map((file, key) => <PlantListItem {...file} key={key} />)
     return (
       <div className="PlantList">
