@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-// import './NavBar.css' //add the css file
-
+// import './NavBar.css'
+import { Link } from 'react-router-dom'
 
 class NavBar extends Component {
   render () {
     return (
       <div className="NavBar">
-        <nav>
-        <ul>
-          <li>ALL PLANTS</li>
-          <li>MY PLANTS</li>
-          <li>SIGN OUT</li>
-        </ul>
-        </nav>
+          <Link to ="/all-plants">
+            ALL PLANTS
+          </Link>
+          MY PLANTS
+          SIGN OUT
       </div>
     )
   }
