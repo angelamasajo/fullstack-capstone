@@ -11,8 +11,14 @@ class SearchFilter extends Component {
           <h1>Plants List</h1>
         </div>
         <div className="SearchFilter__controls">
-          <SearchBox />
-          <FilterOptions />
+          <SearchBox 
+            searchTerm={this.props.searchTerm}
+            handleUpdate={this.props.handleUpdate}
+          />
+          <FilterOptions 
+            filterOption={this.props.filterOption}
+            handleFilterChange={this.props.handleFilterChange}
+          />
         </div>
       </div>
     )
