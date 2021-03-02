@@ -4,6 +4,9 @@ class LoginPage extends Component {
   render () {
     return (
       <div className="LoginPage">
+        <header>
+          <h1>PLANTVENTORY</h1>
+        </header>
         <form>
           <fieldset>
             <legend>Log In</legend>

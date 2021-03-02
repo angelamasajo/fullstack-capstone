@@ -7,8 +7,9 @@ class PlantList extends Component {
     const { searchTerm, filterOption } = this.props;
     const list = this.props.files
       .filter(file => file.name.includes(searchTerm)
-        && (filterOption === 'All' || file.status === filterOption))
+        && (filterOption === 'All' || file.plantType === filterOption))
       .map((file, key) => <PlantListItem {...file} key={key} />)
+    console.log(searchTerm)
     return (
       <div className="PlantList">
         <fieldset>

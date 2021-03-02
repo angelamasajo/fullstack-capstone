@@ -1,11 +1,15 @@
 .App > nav {
-  background-color: #222;
+  background-color: #4A5D23;
   padding: 10px;
 }
 
 .App > footer {
-  background-color: #222;
+  background-color: #4A5D23;
   padding: 10px;
   color: white;
   margin-bottom: 0px;
+}
+
+.App {
+  background-color: #D0F0C0 ;
 }

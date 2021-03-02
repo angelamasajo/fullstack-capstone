@@ -23,6 +23,11 @@ class AllPlantsPage extends Component {
       filterOption: option
     })
   }
+  // updateFilterOptionTox(tox) {
+  //   this.setState({
+  //     filterOptionTox: tox
+  //   })
+  // }
 
   render () {
     return (
