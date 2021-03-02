@@ -2,45 +2,38 @@ import React, { Component } from 'react'
 import PlantList from '../PlantList/PlantList'
 import SearchFilter from '../SearchFilter/SearchFilter'
 import FILES from '../dummy-store'
+import PlantContext from '../PlantContext'
 
 class AllPlantsPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: '',
-      filterOption: 'All',
-      filterOptionTox: 'all',
-      allPlants: FILES
-    }
+  static contextType = PlantContext
+  
+  state = {
+    searchTerm: '',
+    filterOption: 'All',
+    filterOptionTox: 'all',
   }
   
   updateSearchTerm(term) {
-    const data = this.state.allPlants
+    const data = this.context.plantData
       .filter(file => file.name.toLowerCase().includes(term.toLowerCase()))
       console.log(data)
     this.setState({
-      allPlants: data,
       searchTerm: term
     })
   }
 
-    //     && (filterOption === 'All' || file.plantType === filterOption)
-    //     && (filterOptionTox === 'All' || file.toxicity === filterOptionTox))
-
   updateFilterOption(option) {
-    const data = this.state.allPlants
+    const data = this.context.plantData
       .filter(file => file.plantType.toLowerCase().includes(option.toLowerCase()))
     this.setState({
-      allPlants: data,
       filterOption: option
     })
   }
 
   updateFilterOptionTox(tox) {
-    const data = this.state.allPlants
+    const data = this.context.plantData
       .filter(file => file.toxicity.toLowerCase().includes(tox.toLowerCase()))
     this.setState({
-      allPlants: data,
       filterOptionTox: tox
     })
   }
@@ -59,11 +52,10 @@ class AllPlantsPage extends Component {
           handleFilterToxChange={tox => this.updateFilterOptionTox(tox)}
         />
         <PlantList 
-          files={FILES}
+          files={this.context.plantData}
           searchTerm={this.state.searchTerm}
           filterOption={this.state.filterOption}
           filterOptionTox={this.state.filterOptionTox}
-          allPlants={this.state.allPlants}
         />
       </div>
     )

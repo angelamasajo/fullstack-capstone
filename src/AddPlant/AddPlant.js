@@ -1,6 +1,19 @@
 import React, { Component } from 'react'
+import PlantContext from '../PlantContext'
 
 class AddPlant extends Component {
+  static contextType = PlantContext;
+
+  state = {
+    plantName: ''
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+
+//finish thisssss
+  }
+
   render () {
     return (
       <div className="AddPlant">
@@ -9,7 +22,7 @@ class AddPlant extends Component {
           <h1>Add New Plant</h1>
         </header>
         
-        <form id="record-plant">
+        <form id="record-plant" onSubmit={this.handleSubmit}>
           <section className="form-section overview-section">
             <label htmlFor="plant-title">Plant name</label>
 

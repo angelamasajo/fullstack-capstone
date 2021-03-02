@@ -8,7 +8,10 @@ class ControlBar extends Component {
     return (
       <div className="ControlBar">
         <div className="ControlBar__button">
-          <FontAwesomeIcon icon={faPlus}/>
+          <FontAwesomeIcon 
+            icon={faPlus}
+            
+          />
         </div>
       </div>
     )
