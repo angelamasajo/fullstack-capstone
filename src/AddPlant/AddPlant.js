@@ -5,13 +5,31 @@ class AddPlant extends Component {
   static contextType = PlantContext;
 
   state = {
-    plantName: ''
+    title: '',
+    summary: '',
+    plantType: '',
+    toxType: ''
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
+    const {title, summary, plantType, toxType} = this.state
+    // console.log(this.state.title, this.state.summary, this.state.plantType, this.state.toxType)
+    const newPlant = {
+      name: title,
+      careDetails: summary,
+      plantType,
+      toxicity: toxType
+    }
+    this.context.addPlant(newPlant)
+//finish thisssss 
 
-//finish thisssss
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name] : e.target.value
+    })
   }
 
   render () {
@@ -24,27 +42,33 @@ class AddPlant extends Component {
         
         <form id="record-plant" onSubmit={this.handleSubmit}>
           <section className="form-section overview-section">
-            <label htmlFor="plant-title">Plant name</label>
+            <label htmlFor="title">Plant name</label>
 
             <br />
 
             <input 
               type="text" 
-              name="plant-title" 
+              id='title'
+              value={this.state.title}
+              name="title" 
               placeholder="i.e., Monstera deliciosa" 
+              onChange={this.handleChange}
               required 
             />
           </section>
           <section className="form-section overview-section">
-            <label htmlFor="plant-summary">Plant care details</label>
+            <label htmlFor="summary">Plant care details</label>
 
             <br />
 
             <textarea 
-              name="plant-summary" 
+              name="summary" 
               rows="15" 
+              value={this.state.summary}
               placeholder="i.e., Thrives in bright to medium indirect light. Not suited for intense, direct sun but can be acclimated to withstand it. Water every 1-2 weeks, allowing soil to dry out between waterings. Expect to water more often in brighter light and less often in lower light. Monsteras can benefit from filtered water or leaving water out overnight before using. "
               required
+              onChange={this.handleChange}
+
             />
           </section>
 
@@ -54,10 +78,12 @@ class AddPlant extends Component {
               
             <input 
               type="radio" 
-              name="plant-type" 
+              name="plantType" 
               id="plant-type-succulent" 
-              value="0" 
+              value="Succulent" 
               className="plant-type-radio" 
+              onChange={this.handleChange}
+
             />
               <label htmlFor="plant-type-succulent">
                 <span>Succulent</span>
@@ -67,10 +93,13 @@ class AddPlant extends Component {
 
               <input 
                 type="radio" 
-                name="plant-type" 
+                name="plantType" 
                 id="plant-type-tropical" 
-                value="1" 
-                className="plant-type-radio" />
+                value="Tropical" 
+                className="plant-type-radio" 
+                onChange={this.handleChange}
+
+              />
               <label htmlFor="plant-type-tropical">
                 <span>Tropical</span>
               </label>
@@ -79,10 +108,12 @@ class AddPlant extends Component {
 
               <input 
                 type="radio" 
-                name="plant-type" 
+                name="plantType" 
                 id="plant-type-holiday" 
-                value="1" 
-                className="plant-type-radio" 
+                value="Holiday" 
+                className="plant-type-radio"
+                onChange={this.handleChange}
+ 
               />
               <label htmlFor="plant-type-holiday">
                 <span>Holiday</span>
@@ -92,10 +123,12 @@ class AddPlant extends Component {
               
               <input 
                 type="radio" 
-                name="plant-type"  
+                name="plantType"  
                 id="plant-type-trailing" 
-                value="1" 
+                value="Trailing" 
                 className="plant-type-radio"
+                onChange={this.handleChange}
+
               />
               <label htmlFor="plant-type-trailing">  
                 <span>Trailing/Climbing</span>
@@ -106,10 +139,12 @@ class AddPlant extends Component {
               
               <input 
                 type="radio" 
-                name="plant-type" 
+                name="plantType" 
                 id="plant-type-other" 
-                value="1" 
+                value="Other" 
                 className="plant-type-radio" 
+                onChange={this.handleChange}
+
               />
               <label htmlFor="plant-type-other">  
                 <span>Other</span>
@@ -122,9 +157,12 @@ class AddPlant extends Component {
             <h2>Toxicity</h2>
             <input 
               type="radio" 
-              name="plant-type" 
+              name="toxType" 
+              value="Toxic"
               id="plant-type-toxic" 
               className="plant-type-radio" 
+              onChange={this.handleChange}
+
             />
             <label htmlFor="plant-type-toxic">
               <span>Toxic</span>
@@ -134,9 +172,12 @@ class AddPlant extends Component {
 
             <input 
               type="radio" 
-              name="plant-type" 
+              name="toxType" 
+              value="Petsafe"
               id="plant-type-petsafe" 
               className="plant-type-radio" 
+              onChange={this.handleChange}
+
             />
             <label htmlFor="plant-type-petsafe">
               <span>Pet-safe</span>

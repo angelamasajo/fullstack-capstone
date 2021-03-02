@@ -11,14 +11,9 @@ import FILES from './dummy-store';
 
 class App extends Component {
   state = {
-    plantData: []
+    plantData: FILES
   }
 
-  componentDidMount () {
-    this.setState({
-      plantData: FILES
-    })
-  }
 
   addPlant = (plant) => {
     this.setState({

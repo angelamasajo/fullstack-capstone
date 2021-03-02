@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PlantList from '../PlantList/PlantList'
 import SearchFilter from '../SearchFilter/SearchFilter'
-import FILES from '../dummy-store'
 import PlantContext from '../PlantContext'
 
 class AllPlantsPage extends Component {
@@ -11,35 +10,51 @@ class AllPlantsPage extends Component {
     searchTerm: '',
     filterOption: 'All',
     filterOptionTox: 'all',
+    allPlants: []
   }
+
+  componentDidMount() {
+    console.log(this.context.plantData)
+    this.setState({allPlants: this.context.plantData})
+  }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(prevState.allPlants !== this.state.allPlants) {
+  //     this.setState({allPlants: this.context.plantData})
+  //   }
+  // }
   
   updateSearchTerm(term) {
     const data = this.context.plantData
       .filter(file => file.name.toLowerCase().includes(term.toLowerCase()))
       console.log(data)
     this.setState({
+      allPlants: data,
       searchTerm: term
     })
   }
 
   updateFilterOption(option) {
-    const data = this.context.plantData
+    console.log(option)
+    const data = option === 'All' ? this.context.plantData : this.context.plantData
       .filter(file => file.plantType.toLowerCase().includes(option.toLowerCase()))
     this.setState({
+      allPlants: data,
       filterOption: option
     })
   }
 
   updateFilterOptionTox(tox) {
-    const data = this.context.plantData
+    console.log(tox)
+    const data = tox === 'all' ? this.context.plantData : this.context.plantData
       .filter(file => file.toxicity.toLowerCase().includes(tox.toLowerCase()))
     this.setState({
+      allPlants: data,
       filterOptionTox: tox
     })
   }
 
   render () {
-
 
     return (
       <div className="AllPlantsPage">
@@ -52,7 +67,7 @@ class AllPlantsPage extends Component {
           handleFilterToxChange={tox => this.updateFilterOptionTox(tox)}
         />
         <PlantList 
-          files={this.context.plantData}
+          allPlants={this.state.allPlants}
           searchTerm={this.state.searchTerm}
           filterOption={this.state.filterOption}
           filterOptionTox={this.state.filterOptionTox}
