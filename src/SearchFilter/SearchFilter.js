@@ -18,6 +18,8 @@ class SearchFilter extends Component {
           <FilterOptions 
             filterOption={this.props.filterOption}
             handleFilterChange={this.props.handleFilterChange}
+            filterOpitonTox={this.props.filterOpitonTox}
+            handleFilterToxChange={this.props.handleFilterToxChange}
           />
         </div>
       </div>

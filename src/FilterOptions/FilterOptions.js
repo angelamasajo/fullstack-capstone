@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 class FilterOptions extends Component {
   render () {
     const { filterOption } = this.props;
+    const { filterOptionTox } = this.props;
     return (
       <div className="FilterOptions">
         
@@ -94,18 +95,39 @@ class FilterOptions extends Component {
             <legend>Toxicity</legend>
 
             <label htmlFor="filter_allToxicity">
-              <input type="radio" value="all" id="filter_allToxicity" name="filterToxicity"/>
+              <input 
+                type="radio" 
+                value="all" 
+                id="filter_allToxicity" 
+                name="filterToxicity"
+                checked={filterOptionTox === "all"}
+                onChange={e => this.props.handleFilterToxChange(e.target.value)}
+              />
               All
             </label>
 
 
             <label htmlFor="filter_toxic">
-              <input type="radio" value="toxic" id="filter_toxic" name="filterToxicity"/>
+              <input 
+                type="radio" 
+                value="toxic" 
+                id="filter_toxic" 
+                name="filterToxicity"
+                checked={filterOptionTox === "toxic"}
+                onChange={e => this.props.handleFilterToxChange(e.target.value)}
+              />
               Toxic
             </label>
 
             <label htmlFor="filter_nontoxic">
-              <input type="radio" value="nontoxic" id="filter_nontoxic" name="filterToxicity"/>
+              <input 
+                type="radio" 
+                value="nontoxic" 
+                id="filter_nontoxic" 
+                name="filterToxicity"
+                checked={filterOptionTox === "non-toxic"}
+                onChange={e => this.props.handleFilterToxChange(e.target.value)}
+              />
               Non-toxic
             </label>
           </fieldset>

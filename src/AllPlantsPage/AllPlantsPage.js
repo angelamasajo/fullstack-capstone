@@ -8,28 +8,45 @@ class AllPlantsPage extends Component {
     super(props);
     this.state = {
       searchTerm: '',
-      filterOption: 'All'
+      filterOption: 'All',
+      filterOptionTox: 'all',
+      allPlants: FILES
     }
   }
   
   updateSearchTerm(term) {
+    const data = this.state.allPlants
+      .filter(file => file.name.toLowerCase().includes(term.toLowerCase()))
+      console.log(data)
     this.setState({
+      allPlants: data,
       searchTerm: term
     })
   }
 
   updateFilterOption(option) {
+    const data = this.state.allPlants
+      .filter(file => file.plantType.toLowerCase().includes(option.toLowerCase()))
     this.setState({
+      allPlants: data,
       filterOption: option
     })
   }
-  // updateFilterOptionTox(tox) {
-  //   this.setState({
-  //     filterOptionTox: tox
-  //   })
-  // }
+
+  updateFilterOptionTox(tox) {
+    const data = this.state.allPlants
+      .filter(file => file.toxicity.toLowerCase().includes(tox.toLowerCase()))
+    this.setState({
+      allPlants: data,
+      filterOptionTox: tox
+    })
+  }
+
+
 
   render () {
+
+
     return (
       <div className="AllPlantsPage">
         <SearchFilter
@@ -37,11 +54,15 @@ class AllPlantsPage extends Component {
           filterOption={this.state.filterOption}
           handleUpdate={term => this.updateSearchTerm(term)}
           handleFilterChange={option => this.updateFilterOption(option)}
+          filterOptionTox={this.state.filterOptionTox}
+          handleFilterToxChange={tox => this.updateFilterOptionTox(tox)}
         />
         <PlantList 
           files={FILES}
           searchTerm={this.state.searchTerm}
           filterOption={this.state.filterOption}
+          filterOptionTox={this.state.filterOptionTox}
+          allPlants={this.state.allPlants}
         />
       </div>
     )

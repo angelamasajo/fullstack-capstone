@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-// import './PlantList.css'; //add css
 import PlantListItem from '../PlantListItem/PlantListItem';
+// import './PlantList.css'; //add css
+// import PlantListItem from '../PlantListItem/PlantListItem';
 
 class PlantList extends Component {
   render () {
-    const { searchTerm, filterOption } = this.props;
-    const list = this.props.files
-      .filter(file => file.name.includes(searchTerm)
-        && (filterOption === 'All' || file.plantType === filterOption))
-      .map((file, key) => <PlantListItem {...file} key={key} />)
-    console.log(searchTerm)
+    const { allPlants } = this.props;
+    const list = allPlants.map((file, key) => <PlantListItem {...file} key={key} />)
+    // const list = this.props.files
+    //   .filter(file => file.name.toLowerCase().includes(searchTerm.toLowerCase())
+    //     && (filterOption === 'All' || file.plantType === filterOption)
+    //     && (filterOptionTox === 'All' || file.toxicity === filterOptionTox))
+    //   .map((file, key) => <PlantListItem {...file} key={key} />)
     return (
       <div className="PlantList">
         <fieldset>
