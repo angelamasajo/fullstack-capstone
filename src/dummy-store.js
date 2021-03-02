@@ -17,7 +17,7 @@ const FILES = [
     id: 3,
     name: "Christmas Cactus",
     plantType: "Holiday",
-    toxicity: "Non-toxic",
+    toxicity: "Pet-safe",
     careDetails: "Here's the care detail for the christmas cactus",
   },
   {

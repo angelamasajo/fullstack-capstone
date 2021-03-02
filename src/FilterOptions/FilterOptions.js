@@ -119,16 +119,16 @@ class FilterOptions extends Component {
               Toxic
             </label>
 
-            <label htmlFor="filter_nontoxic">
+            <label htmlFor="filter_Petsafe">
               <input 
                 type="radio" 
-                value="nontoxic" 
-                id="filter_nontoxic" 
+                value="Pet-safe" 
+                id="filter_petsafe" 
                 name="filterToxicity"
-                checked={filterOptionTox === "non-toxic"}
+                checked={filterOptionTox === "Pet-safe"}
                 onChange={e => this.props.handleFilterToxChange(e.target.value)}
               />
-              Non-toxic
+              Nontoxic
             </label>
           </fieldset>
           </form>

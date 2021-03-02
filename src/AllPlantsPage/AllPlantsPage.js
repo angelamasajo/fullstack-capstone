@@ -24,6 +24,9 @@ class AllPlantsPage extends Component {
     })
   }
 
+    //     && (filterOption === 'All' || file.plantType === filterOption)
+    //     && (filterOptionTox === 'All' || file.toxicity === filterOptionTox))
+
   updateFilterOption(option) {
     const data = this.state.allPlants
       .filter(file => file.plantType.toLowerCase().includes(option.toLowerCase()))
@@ -41,8 +44,6 @@ class AllPlantsPage extends Component {
       filterOptionTox: tox
     })
   }
-
-
 
   render () {
 
