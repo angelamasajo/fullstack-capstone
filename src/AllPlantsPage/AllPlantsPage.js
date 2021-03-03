@@ -34,10 +34,13 @@ class AllPlantsPage extends Component {
     })
   }
 
+  //fix filter on the back end
   updateFilterOption(option) {
     console.log(option)
-    const data = option === 'All' ? this.context.plantData : this.context.plantData
-      .filter(file => file.plantType.toLowerCase().includes(option.toLowerCase()))
+    const data = option === 'All' 
+      ? this.context.plantData 
+      : this.context.plantData
+        .filter(file => file.plantType.toLowerCase().includes(option.toLowerCase()))
     this.setState({
       allPlants: data,
       filterOption: option
@@ -46,8 +49,10 @@ class AllPlantsPage extends Component {
 
   updateFilterOptionTox(tox) {
     console.log(tox)
-    const data = tox === 'all' ? this.context.plantData : this.context.plantData
-      .filter(file => file.toxicity.toLowerCase().includes(tox.toLowerCase()))
+    const data = tox === 'all' 
+      ? this.context.plantData 
+      : this.context.plantData
+        .filter(file => file.toxicity.toLowerCase().includes(tox.toLowerCase()))
     this.setState({
       allPlants: data,
       filterOptionTox: tox
