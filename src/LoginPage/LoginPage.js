@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 // import { Link } from 'react-router-dom;'
 
 class LoginPage extends Component {
 
-
-  render () {
+  routeToHome = () => {
+      this.props.history.push('/all-plants')
+    }
+  render() {
 
     return (
       <div className="LoginPage">
@@ -22,7 +25,6 @@ class LoginPage extends Component {
                 SUBMIT
             </button>
 
-            <p>use any login info</p>
           </fieldset>
         </form>
       </div>
@@ -30,4 +32,4 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);
