@@ -9,10 +9,11 @@ renderPlants = () => {
   return myPlants.map(plant => {
     return (
       <>
-        <h1>{plant.name}</h1>
-        <p>{plant.careDetails}</p>
+        <h2>{plant.name}</h2>
         <p>{plant.plantType}</p>
         <p>{plant.toxicity}</p>
+        <p>{plant.careDetails}</p>
+
       </>
     )
   })
@@ -22,6 +23,7 @@ renderPlants = () => {
 
     return (
       <div>
+        <h1>My Plants</h1>
           {this.renderPlants()}
       </div>
     )
