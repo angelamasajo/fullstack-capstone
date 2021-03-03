@@ -22,8 +22,7 @@ class AddPlant extends Component {
       toxicity: toxType
     }
     this.context.addPlant(newPlant)
-//finish thisssss 
-
+    this.props.history.push('/all-plants')
   }
 
   handleChange = (e) => {
@@ -186,7 +185,7 @@ class AddPlant extends Component {
 
           <section className="button-section">
             <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
+            {/* <button type="reset">Reset</button> */}
           </section>
         </form>
       </div>
