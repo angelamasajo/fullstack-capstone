@@ -1,13 +1,28 @@
 import React, { Component } from 'react'
+import PlantContext from '../PlantContext';
 
 class MyPlantsPage extends Component {
+  static contextType = PlantContext;
+
+renderPlants = () => {
+  const {myPlants} = this.context
+  return myPlants.map(plant => {
+    return (
+      <>
+        <h1>{plant.name}</h1>
+        <p>{plant.careDetails}</p>
+        <p>{plant.plantType}</p>
+        <p>{plant.toxicity}</p>
+      </>
+    )
+  })
+}
 
   render () {
+
     return (
       <div>
-        <fieldset>
-          <legend>My Plants</legend>
-        </fieldset>
+          {this.renderPlants()}
       </div>
     )
   }

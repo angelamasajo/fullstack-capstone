@@ -11,7 +11,8 @@ import FILES from './dummy-store';
 
 class App extends Component {
   state = {
-    plantData: FILES
+    plantData: FILES,
+    myPlantData: []
   }
 
 
@@ -21,10 +22,19 @@ class App extends Component {
     })
   }
 
+  addToMyPlants = (plant) => {
+    console.log(plant)
+    this.setState({
+      myPlantData: [...this.state.myPlantData, plant]
+    })
+  }
+
   render() {
     const value = {
       plantData: this.state.plantData,
-      addPlant: this.addPlant
+      addPlant: this.addPlant,
+      addToMyPlants: this.addToMyPlants,
+      myPlants: this.state.myPlantData
     }
 
     return (

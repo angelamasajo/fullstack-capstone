@@ -9,23 +9,27 @@ class PlantListItem extends Component {
   static contextType = PlantContext;
 
 
-  handleAddToMyList = (e) => {
-    e.preventDefault()
-    console.log('hello')
+  handleAddToMyList = () => {
+    const { name, careDetails, plantType, toxicity } = this.props;
+    console.log(this.props)
+    this.context.addToMyPlants({name, careDetails, plantType, toxicity})
+    console.log(this.context.myPlants)
   }
 
   render () {
+    const { name, careDetails} = this.props;
     return (
       <div className="PlantListItem">
-        <form onSubmit={this.handleAddToMyList}>
+
           <label className="PlantListItem__plantName">
-            <h2>{this.props.name}</h2>
-            <p>{this.props.careDetails}</p>
+            <h2>{name}</h2>
+            <p>{careDetails}</p>
           </label>
 
             <div className="ControlBar">
               <button 
-                type='submit'
+                type='button'
+                onClick={() => this.handleAddToMyList()}
                 className="ControlBar__button"
               >
                 <FontAwesomeIcon 
@@ -35,7 +39,6 @@ class PlantListItem extends Component {
               </button>
             </div>
           
-        </form>
       </div>
     )
   }
