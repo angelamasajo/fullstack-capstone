@@ -8,13 +8,13 @@ renderPlants = () => {
   const {myPlants} = this.context
   return myPlants.map(plant => {
     return (
-      <>
+      <div className='MyPlantItem'>
         <h2>{plant.name}</h2>
         <p>{plant.plantType}</p>
         <p>{plant.toxicity}</p>
         <p>{plant.careDetails}</p>
 
-      </>
+      </div>
     )
   })
 }
