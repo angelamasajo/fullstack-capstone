@@ -8,19 +8,60 @@ import MyPlantsPage from './MyPlantsPage/MyPlantsPage';
 import AddPlant from './AddPlant/AddPlant';
 import PlantContext from './PlantContext';
 import FILES from './dummy-store';
+import config from './config'
 
 class App extends Component {
   state = {
     plantData: FILES,
-    myPlantData: []
+    myPlantData: [],
+    plants: []
   }
 
+  componentDidMount () {
+    // Promise.all([
+      fetch(`${config.API_ENDPOINT}/plants`)
+      // fetch(`${config.API_ENPOINT}/users`)
+    // ])
+      .then(([plantsRes]) => {
+        if (!plantsRes.ok) { 
+          return plantsRes.json()
+          // .then(e => Promise.reject(e)) 
+        }
 
-  addPlant = (plant) => {
-    this.setState({
-      plantData: [...this.state.plantData, plant]
-    })
+        console.log(plantsRes.json())
+        // return [plantsRes.json()]
+      })
+      .then(([plants]) => {
+        this.setState({plants})
+      })
+      .catch(error => {
+        console.error({error}) // eslint-disable-line
+      })
   }
+
+  fetchPlants = () => {
+    fetch(`${config.API_ENDPOINT}/plants`)
+      .then(data => {
+        if (!data.ok) {
+          throw new Error ('Something went wrong.')
+        }
+        console.log(data, 'angela')
+        return data.json()
+      })
+      .then(data => {
+        this.setState({plants:data})
+      })
+  }
+
+  addPlant = () => {
+    this.fetchPlants()
+  }
+
+  // addPlant = (plant) => {
+  //   this.setState({
+  //     plantData: [...this.state.plantData, plant]
+  //   })
+  // }
 
   addToMyPlants = (plant) => {
     console.log(plant)

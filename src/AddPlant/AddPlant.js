@@ -13,6 +13,34 @@ class AddPlant extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+
+    // const postBody = {
+    //   name: this.state.title,
+    //   care_details: this.state.summary,
+    //   plant_type: this.state.plantType,
+    //   toxicity: this.state.toxType
+    // }
+
+    // fetch(`${config.API_ENDPOINT}/plants`, {
+    //   method: 'POST',
+    //   body: JSON.stringify(postBody),
+    //   headers: {
+    //     'content-type': 'application/json'
+    //   }
+    // })
+    //   .then((res) => {
+    //     if(!res.ok) {
+    //       return res.json().then((error) => {
+    //         throw error
+    //       })
+    //     }
+    //     return res.json()
+    //   })
+    //   .then((data) => {
+    //     this.context.addPlant(data)
+    //     this.props.history.push('/')
+    //   })
+
     const {title, summary, plantType, toxType} = this.state
     // console.log(this.state.title, this.state.summary, this.state.plantType, this.state.toxType)
     const newPlant = {
