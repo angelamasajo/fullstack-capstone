@@ -10,22 +10,24 @@ class PlantListItem extends Component {
 
 
   handleAddToMyList = () => {
-    const { name, careDetails, plantType, toxicity } = this.props;
+    const { name, care_details, plant_type, toxicity } = this.props;
     // console.log(this.props)
-    this.context.addToMyPlants({name, careDetails, plantType, toxicity})
+    this.context.addToMyPlants({name, care_details, plant_type, toxicity})
     // console.log(this.context.myPlants)
     // this.props.history.push('/my-plants')
 
   }
 
   render () {
-    const { name, careDetails} = this.props;
+    const { name, plant_type, toxicity, care_details} = this.props;
     return (
       <div className="PlantListItem">
 
           <label className="PlantListItem__plantName">
             <h2>{name}</h2>
-            <p>{careDetails}</p>
+            <p>{plant_type}</p>
+            <p>{toxicity}</p>
+            <p>{care_details}</p>
           </label>
 
             <div className="ControlBar">

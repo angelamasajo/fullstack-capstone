@@ -14,8 +14,9 @@ class AllPlantsPage extends Component {
   }
 
   componentDidMount() {
-    console.log(this.context.plantData)
     this.setState({allPlants: this.context.plantData})
+    console.log(this.context.plantData)
+
   }
 
   // componentDidUpdate(prevProps, prevState) {
@@ -40,7 +41,7 @@ class AllPlantsPage extends Component {
     const data = option === 'All' 
       ? this.context.plantData 
       : this.context.plantData
-        .filter(file => file.plantType.toLowerCase().includes(option.toLowerCase()))
+        .filter(file => file.plant_type.toLowerCase().includes(option.toLowerCase()))
     this.setState({
       allPlants: data,
       filterOption: option
@@ -65,8 +66,8 @@ class AllPlantsPage extends Component {
       <div className="AllPlantsPage">
         <SearchFilter
           searchTerm={this.state.searchTerm}
-          filterOption={this.state.filterOption}
           handleUpdate={term => this.updateSearchTerm(term)}
+          filterOption={this.state.filterOption}
           handleFilterChange={option => this.updateFilterOption(option)}
           filterOptionTox={this.state.filterOptionTox}
           handleFilterToxChange={tox => this.updateFilterOptionTox(tox)}

@@ -47,7 +47,7 @@ class App extends Component {
       })
       .then(data => {
         this.setState({plantData:data})
-        // console.log(data, 'plant data')
+        console.log(data, 'plant data')
       })
   }
 

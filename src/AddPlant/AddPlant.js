@@ -7,7 +7,7 @@ class AddPlant extends Component {
   state = {
     title: '',
     summary: '',
-    plantType: '',
+    plant_type: '',
     toxType: ''
   }
 
@@ -41,12 +41,12 @@ class AddPlant extends Component {
     //     this.props.history.push('/')
     //   })
 
-    const {title, summary, plantType, toxType} = this.state
+    const {title, summary, plant_type, toxType} = this.state
     // console.log(this.state.title, this.state.summary, this.state.plantType, this.state.toxType)
     const newPlant = {
       name: title,
-      careDetails: summary,
-      plantType,
+      care_details: summary,
+      plant_type,
       toxicity: toxType
     }
     this.context.addPlant(newPlant)
