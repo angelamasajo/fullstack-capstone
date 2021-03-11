@@ -72,7 +72,7 @@ class AllPlantsPage extends Component {
           handleFilterToxChange={tox => this.updateFilterOptionTox(tox)}
         />
         <PlantList 
-          allPlants={this.state.allPlants}
+          allPlants={this.context.plantData}
           searchTerm={this.state.searchTerm}
           filterOption={this.state.filterOption}
           filterOptionTox={this.state.filterOptionTox}

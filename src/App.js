@@ -7,32 +7,30 @@ import AllPlantsPage from './AllPlantsPage/AllPlantsPage';
 import MyPlantsPage from './MyPlantsPage/MyPlantsPage';
 import AddPlant from './AddPlant/AddPlant';
 import PlantContext from './PlantContext';
-import FILES from './dummy-store';
+// import FILES from './dummy-store';
 import config from './config'
 
 class App extends Component {
   state = {
-    plantData: FILES,
+    // plantData: FILES,
+    plantData: [],
     myPlantData: [],
-    plants: []
   }
 
   componentDidMount () {
-    // Promise.all([
-      fetch(`${config.API_ENDPOINT}/plants`)
-      // fetch(`${config.API_ENPOINT}/users`)
-    // ])
-      .then(([plantsRes]) => {
+    //-----remove promise all
+    fetch(`${config.API_ENDPOINT}/plants`)
+      // fetch(`${config.API_ENPOINT}/users/plants`)
+      .then((plantsRes) => {
         if (!plantsRes.ok) { 
           return plantsRes.json()
-          // .then(e => Promise.reject(e)) 
+          .then(e => Promise.reject(e)) 
         }
-
-        console.log(plantsRes.json())
-        // return [plantsRes.json()]
+        return plantsRes.json()
       })
-      .then(([plants]) => {
-        this.setState({plants})
+      .then((plantData) => {
+        this.setState({plantData})
+        console.log(plantData)
       })
       .catch(error => {
         console.error({error}) // eslint-disable-line
@@ -45,11 +43,11 @@ class App extends Component {
         if (!data.ok) {
           throw new Error ('Something went wrong.')
         }
-        console.log(data, 'angela')
         return data.json()
       })
       .then(data => {
-        this.setState({plants:data})
+        this.setState({plantData:data})
+        // console.log(data, 'plant data')
       })
   }
 

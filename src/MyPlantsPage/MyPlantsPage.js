@@ -4,6 +4,9 @@ import PlantContext from '../PlantContext';
 class MyPlantsPage extends Component {
   static contextType = PlantContext;
 
+
+  //do component did mount here
+  
 renderPlants = () => {
   const {myPlants} = this.context
   return myPlants.map(plant => {
