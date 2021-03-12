@@ -18,9 +18,7 @@ class App extends Component {
   }
 
   componentDidMount () {
-    //-----remove promise all
     fetch(`${config.API_ENDPOINT}/plants`)
-      // fetch(`${config.API_ENPOINT}/users/plants`)
       .then((plantsRes) => {
         if (!plantsRes.ok) { 
           return plantsRes.json()

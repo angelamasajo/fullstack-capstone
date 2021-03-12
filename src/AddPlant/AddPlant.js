@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PlantContext from '../PlantContext'
+import config from '../config'
 
 class AddPlant extends Component {
   static contextType = PlantContext;
@@ -14,43 +15,43 @@ class AddPlant extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    // const postBody = {
-    //   name: this.state.title,
-    //   care_details: this.state.summary,
-    //   plant_type: this.state.plantType,
-    //   toxicity: this.state.toxType
-    // }
-
-    // fetch(`${config.API_ENDPOINT}/plants`, {
-    //   method: 'POST',
-    //   body: JSON.stringify(postBody),
-    //   headers: {
-    //     'content-type': 'application/json'
-    //   }
-    // })
-    //   .then((res) => {
-    //     if(!res.ok) {
-    //       return res.json().then((error) => {
-    //         throw error
-    //       })
-    //     }
-    //     return res.json()
-    //   })
-    //   .then((data) => {
-    //     this.context.addPlant(data)
-    //     this.props.history.push('/')
-    //   })
-
-    const {title, summary, plant_type, toxType} = this.state
-    // console.log(this.state.title, this.state.summary, this.state.plantType, this.state.toxType)
-    const newPlant = {
-      name: title,
-      care_details: summary,
-      plant_type,
-      toxicity: toxType
+    const postBody = {
+      name: this.state.title,
+      care_details: this.state.summary,
+      plant_type: this.state.plantType,
+      toxicity: this.state.toxType
     }
-    this.context.addPlant(newPlant)
-    this.props.history.push('/all-plants')
+
+    fetch(`${config.API_ENDPOINT}/plants`, {
+      method: 'POST',
+      body: JSON.stringify(postBody),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then((res) => {
+        if(!res.ok) {
+          return res.json().then((error) => {
+            throw error
+          })
+        }
+        return res.json()
+      })
+      .then((data) => {
+        this.context.addPlant(data)
+        this.props.history.push('/all-plants')
+      })
+
+  //   const {title, summary, plant_type, toxType} = this.state
+  //   // console.log(this.state.title, this.state.summary, this.state.plantType, this.state.toxType)
+  //   const newPlant = {
+  //     name: title,
+  //     care_details: summary,
+  //     plant_type,
+  //     toxicity: toxType
+  //   }
+  //   this.context.addPlant(newPlant)
+  //   this.props.history.push('/all-plants')
   }
 
   handleChange = (e) => {
@@ -200,7 +201,7 @@ class AddPlant extends Component {
             <input 
               type="radio" 
               name="toxType" 
-              value="Petsafe"
+              value="Pet-safe"
               id="plant-type-petsafe" 
               className="plant-type-radio" 
               onChange={this.handleChange}

@@ -10,7 +10,7 @@ class AllPlantsPage extends Component {
     searchTerm: '',
     filterOption: 'All',
     filterOptionTox: 'all',
-    allPlants: []
+    allPlants: [],
   }
 
   componentDidMount() {
