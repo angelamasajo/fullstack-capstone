@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // import './ListItem.css'; //add css
-// import ControlBar from '../ControlBar/ControlBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import PlantContext from '../PlantContext'
@@ -9,8 +8,12 @@ import config from '../config'
 class PlantListItem extends Component {
   static contextType = PlantContext;
 
+  state = {
+    plant_id: this.props.id,
+    user_id: 1
+  }
 
-  handleSubmit = (e) => {
+  handleAddToMyList = (e) => {
     e.preventDefault()
 
     const postBody = {
@@ -34,7 +37,7 @@ class PlantListItem extends Component {
         return res.json()
       })
       .then((data) => {
-        this.context.addtoMyPlants(data)
+        console.log(data)
         this.props.history.push('/my-plants')
       })
   }
@@ -45,21 +48,22 @@ class PlantListItem extends Component {
   //   })
   // }
 
-  handleAddToMyList = () => {
-    const { name, care_details, plant_type, toxicity } = this.props;
-    console.log(this.props, 'list item')
-    this.context.addToMyPlants({name, care_details, plant_type, toxicity})
-    console.log(this.context.myPlants)
-    // this.props.history.push('/my-plants')
+  // handleAddToMyList = () => {
+  //   const { name, care_details, plant_type, toxicity } = this.props;
+  //   console.log(this.props, 'list item')
+  //   this.context.addToMyPlants({name, care_details, plant_type, toxicity})
+  //   console.log(this.context.myPlants)
+  //   // this.props.history.push('/my-plants')
 
-  }
+  // }
 
   render () {
-    const { name, plant_type, toxicity, care_details} = this.props;
+    const { id, name, plant_type, toxicity, care_details} = this.props;
+    console.log(this.props, 'check')
     return (
       <div className="PlantListItem">
-
-          <label className="PlantListItem__plantName" >
+        <form id="add-to-user-list" onSubmit={this.handleAddToMyList}>
+          <label value={this.context.plant_id} className="PlantListItem__plantName" >
             <h2>{name}</h2>
             <p>{plant_type}</p>
             <p>{toxicity}</p>
@@ -68,8 +72,8 @@ class PlantListItem extends Component {
 
             <div className="ControlBar">
               <button 
-                type='button'
-                onClick={() => this.handleAddToMyList()}
+                type='submit'
+                // onClick={() => this.handleAddToMyList()}
                 className="ControlBar__button"
               >
                 <FontAwesomeIcon 
@@ -78,7 +82,7 @@ class PlantListItem extends Component {
                 Add to my list
               </button>
             </div>
-          
+        </form>
       </div>
     )
   }

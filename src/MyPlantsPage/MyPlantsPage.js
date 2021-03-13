@@ -9,8 +9,9 @@ class MyPlantsPage extends Component {
   static contextType = PlantContext;
 
   state = {
-    myPlants: this.context.myPlants
+    myPlants: []
   }
+
   //do component did mount here
   componentDidMount () {
     fetch(`${config.API_ENDPOINT}/users/1/plants`)
@@ -30,11 +31,27 @@ class MyPlantsPage extends Component {
       })
   }
 
+  deleteFromMyList = (e, plant_id) => {
+    console.log(plant_id, 'check id')
+    //delete from user_plants table
+    //fetch endpoint to delete
+    fetch(`${config.API_ENDPOINT}/users/1/plants`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then((data) => {
+        console.log(data, 'delete data')
+      })
+  }
+
 renderPlants = () => {
   const myPlants = this.state.myPlants
-  return myPlants.map((plant) => {
+  return myPlants.map((plant, i) => {
+    // console.log(myPlants, 'myplants')
     return (
-      <div className='MyPlantItem'>
+      <div key={i} className='MyPlantItem'>
         <h2>{plant.plant_name}</h2>
         <p>{plant.plant_type}</p>
         <p>{plant.toxicity}</p>
@@ -43,7 +60,7 @@ renderPlants = () => {
         <div className="DeletePlant">
               <button 
                 type='button'
-                onClick={() => this.deleteFromMyList()}
+                onClick={(e) => this.deleteFromMyList( e, plant.plant_id )}
                 className="DeletePlant__button"
               >
                 <FontAwesomeIcon 

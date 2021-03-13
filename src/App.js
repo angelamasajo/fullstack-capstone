@@ -14,7 +14,7 @@ class App extends Component {
   state = {
     // plantData: FILES,
     plantData: [],
-    myPlantData: [],
+    // myPlantData: [],
   }
 
   componentDidMount () {
@@ -59,19 +59,19 @@ class App extends Component {
   //   })
   // }
 
-  addToMyPlants = (plant) => {
-    console.log(plant)
-    this.setState({
-      myPlantData: [...this.state.myPlantData, plant]
-    })
-  }
+  // addToMyPlants = (plant) => {
+  //   console.log(plant)
+  //   this.setState({
+  //     myPlantData: [...this.state.myPlantData, plant]
+  //   })
+  // }
 
   render() {
     const value = {
       plantData: this.state.plantData,
       addPlant: this.addPlant,
-      addToMyPlants: this.addToMyPlants,
-      myPlants: this.state.myPlantData
+      // addToMyPlants: this.addToMyPlants,
+      // myPlants: this.state.myPlantData
     }
 
     return (

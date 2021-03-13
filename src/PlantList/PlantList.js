@@ -7,7 +7,14 @@ class PlantList extends Component {
   render () {
     console.log(this.props.allPlants)
     const { allPlants } = this.props;
-    const list = allPlants.map((file, key) => <PlantListItem {...file} key={key} />)
+    const list = allPlants.map((file, key) => (
+      <PlantListItem 
+        {...file} 
+        key={key} 
+        id={file.id} 
+        history={this.props.history}
+    />
+    ))
     // const list = this.props.files
     //   .filter(file => file.name.toLowerCase().includes(searchTerm.toLowerCase())
     //     && (filterOption === 'All' || file.plantType === filterOption)

@@ -77,6 +77,7 @@ class AllPlantsPage extends Component {
           searchTerm={this.state.searchTerm}
           filterOption={this.state.filterOption}
           filterOptionTox={this.state.filterOptionTox}
+          history={this.props.history}
         />
       </div>
     )
