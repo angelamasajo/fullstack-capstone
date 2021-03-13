@@ -35,44 +35,52 @@ class MyPlantsPage extends Component {
     console.log(plant_id, 'check id')
     //delete from user_plants table
     //fetch endpoint to delete
-    fetch(`${config.API_ENDPOINT}/users/1/plants`, {
+    fetch(`${config.API_ENDPOINT}/users/1/plants/${plant_id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json'
       }
     })
-      .then((data) => {
-        console.log(data, 'delete data')
+      .then(() => {
+        this.handleDeleteFromMyList()
+        
       })
   }
 
-renderPlants = () => {
-  const myPlants = this.state.myPlants
-  return myPlants.map((plant, i) => {
-    // console.log(myPlants, 'myplants')
-    return (
-      <div key={i} className='MyPlantItem'>
-        <h2>{plant.plant_name}</h2>
-        <p>{plant.plant_type}</p>
-        <p>{plant.toxicity}</p>
-        <p>{plant.care_details}</p>
 
-        <div className="DeletePlant">
-              <button 
-                type='button'
-                onClick={(e) => this.deleteFromMyList( e, plant.plant_id )}
-                className="DeletePlant__button"
-              >
-                <FontAwesomeIcon 
-                  icon={faMinus}
-                /> <br/>
-                Remove from my list
-              </button>
-            </div>
-      </div>
-    )
-  })
-}
+  handleDeleteFromMyList = userPlant => {
+    this.setState({
+      myPlants: this.state.myPlants.filter( plant => plant.plant_id !== userPlant)
+    })
+  }
+
+  renderPlants = () => {
+    const myPlants = this.state.myPlants
+    return myPlants.map((plant, i) => {
+      // console.log(myPlants, 'myplants')
+      return (
+        <div key={i} className='MyPlantItem'>
+          <h2>{plant.plant_name}</h2>
+          <p>{plant.plant_type}</p>
+          <p>{plant.toxicity}</p>
+          <p>{plant.care_details}</p>
+
+          <div className="DeletePlant">
+                <button 
+                  type='button'
+                  onClick={(e) => this.deleteFromMyList( e, plant.plant_id )}
+                  className="DeletePlant__button"
+                >
+                  <FontAwesomeIcon 
+                    icon={faMinus}
+                  /> <br/>
+                  Remove from my list
+                </button>
+              </div>
+        </div>
+      )
+    })
+  }
 
   render () {
 
