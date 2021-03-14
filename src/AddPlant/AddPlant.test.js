@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import NavBar from './NavBar'
+import AddPlant from './AddPlant';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<NavBar />, div);
+  ReactDOM.render(<AddPlant />, div);
   ReactDOM.unmountComponentAtNode(div);
-}) 
+})

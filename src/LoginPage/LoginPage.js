@@ -10,7 +10,6 @@ class LoginPage extends Component {
   render() {
 
     return (
-      <Router>
       <div className="LoginPage">
         <header>
           <h1> WELCOME TO PLANTVENTORY</h1>
@@ -29,7 +28,7 @@ class LoginPage extends Component {
           </fieldset>
         </form>
       </div>
-      </Router
+
     )
   }
 }
