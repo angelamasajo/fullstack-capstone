@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './NavBar/NavBar';
 import LoginPage from './LoginPage/LoginPage';
@@ -81,23 +81,25 @@ class App extends Component {
             <NavBar />
           </nav>
           <main>
-            <Route 
-              exact
-              path='/'
-              component={LoginPage}
-            />
-            <Route
-              path='/all-plants'
-              component={AllPlantsPage}
-            />
-            <Route 
-              path='/add-plant'
-              component={AddPlant}
-            />
-            <Route
-              path='/my-plants'
-              component={MyPlantsPage}
-            />
+            <Switch>
+              <Route 
+                exact
+                path='/'
+                component={LoginPage}
+              />
+              <Route
+                path='/all-plants'
+                component={AllPlantsPage}
+              />
+              <Route 
+                path='/add-plant'
+                component={AddPlant}
+              />
+              <Route
+                path='/my-plants'
+                component={MyPlantsPage}
+              />
+            </Switch>
           </main>
           <footer>
             FOOTER HERE

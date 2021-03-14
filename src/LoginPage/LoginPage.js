@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter, Router } from 'react-router-dom'
 // import { Link } from 'react-router-dom;'
 
 class LoginPage extends Component {
@@ -10,6 +10,7 @@ class LoginPage extends Component {
   render() {
 
     return (
+      <Router>
       <div className="LoginPage">
         <header>
           <h1> WELCOME TO PLANTVENTORY</h1>
@@ -28,6 +29,7 @@ class LoginPage extends Component {
           </fieldset>
         </form>
       </div>
+      </Router
     )
   }
 }

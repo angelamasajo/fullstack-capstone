@@ -43,7 +43,7 @@ class MyPlantsPage extends Component {
     })
       .then(() => {
         this.handleDeleteFromMyList()
-        
+        // this.props.history.push('/my-plants')
       })
   }
 

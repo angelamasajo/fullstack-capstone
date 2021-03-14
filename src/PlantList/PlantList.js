@@ -5,7 +5,7 @@ import PlantListItem from '../PlantListItem/PlantListItem';
 
 class PlantList extends Component {
   render () {
-    console.log(this.props.allPlants)
+    // console.log(this.props.allPlants)
     const { allPlants } = this.props;
     const list = allPlants.map((file, key) => (
       <PlantListItem 
