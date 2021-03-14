@@ -28,7 +28,7 @@ class AllPlantsPage extends Component {
   updateSearchTerm(term) {
     const data = this.context.plantData
       .filter(file => file.name.toLowerCase().includes(term.toLowerCase()))
-      console.log(data)
+      console.log(data, 'search term')
     this.setState({
       allPlants: data,
       searchTerm: term

@@ -42,24 +42,10 @@ class PlantListItem extends Component {
       })
   }
 
-  // handleChange = (e) => {
-  //   this.setState({
-  //     [e.target.name] : e.target.value
-  //   })
-  // }
-
-  // handleAddToMyList = () => {
-  //   const { name, care_details, plant_type, toxicity } = this.props;
-  //   console.log(this.props, 'list item')
-  //   this.context.addToMyPlants({name, care_details, plant_type, toxicity})
-  //   console.log(this.context.myPlants)
-  //   // this.props.history.push('/my-plants')
-
-  // }
 
   render () {
-    const { id, name, plant_type, toxicity, care_details} = this.props;
-    console.log(this.props, 'check')
+    const { id, name, plant_type, toxicity, care_details} = this.props; // eslint-disable-line
+    // console.log(this.props, 'check')
     return (
       <div className="PlantListItem">
         <form id="add-to-user-list" onSubmit={this.handleAddToMyList}>
