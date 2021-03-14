@@ -10,6 +10,7 @@ import PlantContext from './PlantContext';
 // import FILES from './dummy-store';
 import config from './config'
 
+
 class App extends Component {
   state = {
     // plantData: FILES,
