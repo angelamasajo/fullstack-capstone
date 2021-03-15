@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PlantListItem from '../PlantListItem/PlantListItem';
 // import './PlantList.css'; //add css
-// import PlantListItem from '../PlantListItem/PlantListItem';
 
 class PlantList extends Component {
   render () {

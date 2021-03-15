@@ -14,11 +14,10 @@ class AllPlantsPage extends Component {
     allPlants: this.context.plantData,
   }
 
-  componentDidMount() {
-    this.setState({allPlants: this.context.plantData})
-    console.log(this.context.plantData)
-
-  }
+  // componentDidMount() {
+  //   this.setState({allPlants: this.context.plantData})
+  //   console.log(this.state.allPlants)
+  // }
 
   // componentDidUpdate(prevProps, prevState) {
   //   if(prevState.allPlants !== this.state.allPlants) {
@@ -33,7 +32,9 @@ class AllPlantsPage extends Component {
     this.setState({
       allPlants: data,
       searchTerm: term
+      // console.log(allPlants)
     })
+    // console.log(this.state.allPlants, 'all plants updated')
   }
 
   //fix filter on the back end
@@ -74,7 +75,8 @@ class AllPlantsPage extends Component {
           handleFilterToxChange={tox => this.updateFilterOptionTox(tox)}
         />
         <PlantList 
-          allPlants={this.context.plantData}
+          // allPlants={this.context.plantData}
+          allPlants={this.state.allPlants}
           searchTerm={this.state.searchTerm}
           filterOption={this.state.filterOption}
           filterOptionTox={this.state.filterOptionTox}

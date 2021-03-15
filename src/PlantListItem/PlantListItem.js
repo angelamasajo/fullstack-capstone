@@ -12,14 +12,16 @@ class PlantListItem extends Component {
     plant_id: this.props.id,
     user_id: 1
   }
+  
 
   handleAddToMyList = (e) => {
     e.preventDefault()
 
     const postBody = {
-      plant_id: this.state.plant_id,
+      plant_id: this.props.id,
       user_id: this.state.user_id,
     }
+    console.log(this.state.plant_id)
 
     fetch(`${config.API_ENDPOINT}/users/1/plants`, {
       method: 'POST',
@@ -46,10 +48,11 @@ class PlantListItem extends Component {
   render () {
     const { id, name, plant_type, toxicity, care_details} = this.props; // eslint-disable-line
     // console.log(this.props, 'check')
+    console.log(this.props.id, 'plant id check')
     return (
       <div className="PlantListItem">
         <form onSubmit={this.handleAddToMyList}>
-          <label value={this.context.plant_id} className="PlantListItem__plantName" >
+          <label value={this.props.id} className="PlantListItem__plantName" >
             <h2>{name}</h2>
             <p>{plant_type}</p>
             <p>{toxicity}</p>
