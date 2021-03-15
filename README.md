@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Plantventory App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## About the App
+
+This app allows users to browse from all plants available in the database with all other details available, 
+and add to their list of plants. Users can then keep track of all their plant care for easy access to take care of plants.
+
+
 
 ## Available Scripts
 
