@@ -18,12 +18,6 @@ class AllPlantsPage extends Component {
   //   this.setState({allPlants: this.context.plantData})
   //   console.log(this.state.allPlants)
   // }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if(prevState.allPlants !== this.state.allPlants) {
-  //     this.setState({allPlants: this.context.plantData})
-  //   }
-  // }
   
   updateSearchTerm(term) {
     const data = this.context.plantData

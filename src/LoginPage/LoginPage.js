@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import { withRouter, Router } from 'react-router-dom'
-// import { Link } from 'react-router-dom;'
+
 
 class LoginPage extends Component {
 
@@ -34,5 +33,4 @@ class LoginPage extends Component {
   }
 }
 
-// export default withRouter(LoginPage);
 export default LoginPage;
