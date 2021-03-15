@@ -21,7 +21,7 @@ class PlantListItem extends Component {
       plant_id: this.props.id,
       user_id: this.state.user_id,
     }
-    console.log(this.state.plant_id)
+    console.log(this.props.id)
 
     fetch(`${config.API_ENDPOINT}/users/1/plants`, {
       method: 'POST',
