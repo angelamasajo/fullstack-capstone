@@ -41,17 +41,6 @@ class AddPlant extends Component {
         this.context.addPlant(data)
         this.props.history.push('/all-plants')
       })
-
-  //   const {title, summary, plant_type, toxType} = this.state
-  //   // console.log(this.state.title, this.state.summary, this.state.plantType, this.state.toxType)
-  //   const newPlant = {
-  //     name: title,
-  //     care_details: summary,
-  //     plant_type,
-  //     toxicity: toxType
-  //   }
-  //   this.context.addPlant(newPlant)
-  //   this.props.history.push('/all-plants')
   }
 
   handleChange = (e) => {

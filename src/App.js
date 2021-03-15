@@ -7,15 +7,12 @@ import AllPlantsPage from './AllPlantsPage/AllPlantsPage';
 import MyPlantsPage from './MyPlantsPage/MyPlantsPage';
 import AddPlant from './AddPlant/AddPlant';
 import PlantContext from './PlantContext';
-// import FILES from './dummy-store';
 import config from './config'
 
 
 class App extends Component {
   state = {
-    // plantData: FILES,
     plantData: [],
-    // myPlantData: [],
   }
 
   componentDidMount () {
@@ -54,25 +51,11 @@ class App extends Component {
     this.fetchPlants()
   }
 
-  // addPlant = (plant) => {
-  //   this.setState({
-  //     plantData: [...this.state.plantData, plant]
-  //   })
-  // }
-
-  // addToMyPlants = (plant) => {
-  //   console.log(plant)
-  //   this.setState({
-  //     myPlantData: [...this.state.myPlantData, plant]
-  //   })
-  // }
 
   render() {
     const value = {
       plantData: this.state.plantData,
       addPlant: this.addPlant,
-      // addToMyPlants: this.addToMyPlants,
-      // myPlants: this.state.myPlantData
     }
 
     return (

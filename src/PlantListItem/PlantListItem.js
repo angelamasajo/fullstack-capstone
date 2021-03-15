@@ -48,7 +48,7 @@ class PlantListItem extends Component {
     // console.log(this.props, 'check')
     return (
       <div className="PlantListItem">
-        <form id="add-to-user-list" onSubmit={this.handleAddToMyList}>
+        <form onSubmit={this.handleAddToMyList}>
           <label value={this.context.plant_id} className="PlantListItem__plantName" >
             <h2>{name}</h2>
             <p>{plant_type}</p>
@@ -59,7 +59,6 @@ class PlantListItem extends Component {
             <div className="ControlBar">
               <button 
                 type='submit'
-                // onClick={() => this.handleAddToMyList()}
                 className="ControlBar__button"
               >
                 <FontAwesomeIcon 

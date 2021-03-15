@@ -12,7 +12,6 @@ class MyPlantsPage extends Component {
     myPlants: []
   }
 
-  //do component did mount here
   componentDidMount () {
     fetch(`${config.API_ENDPOINT}/users/1/plants`)
       .then( userPlantsRes => {
@@ -23,7 +22,7 @@ class MyPlantsPage extends Component {
         return userPlantsRes.json()
       })
       .then(myPlants => {
-        this.setState({myPlants}) //??????
+        this.setState({myPlants}) 
         console.log(myPlants)
       })
       .catch(error => {
@@ -33,8 +32,7 @@ class MyPlantsPage extends Component {
 
   deleteFromMyList = (e, plant_id) => {
     console.log(plant_id, 'check id')
-    //delete from user_plants table
-    //fetch endpoint to delete
+
     fetch(`${config.API_ENDPOINT}/users/1/plants/${plant_id}`, {
       method: 'DELETE',
       headers: {
@@ -43,7 +41,7 @@ class MyPlantsPage extends Component {
     })
       .then(() => {
         this.handleDeleteFromMyList()
-        // this.props.history.push('/my-plants')
+        alert('Plant deleted.')
       })
   }
 

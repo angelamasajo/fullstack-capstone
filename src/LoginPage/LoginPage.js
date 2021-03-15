@@ -21,6 +21,7 @@ class LoginPage extends Component {
             <input name='username' id='username' required/><br/>
             <label htmlFor='password'>Password</label>
             <input name='password' id='password' required/><br/>
+            <p>Enter any username and password and click submit</p>
             <button type="submit">
                 SUBMIT
             </button>
