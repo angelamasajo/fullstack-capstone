@@ -38,7 +38,7 @@ class AddPlant extends Component {
         return res.json()
       })
       .then((data) => {
-        this.context.addPlant(data)
+        // this.context.addPlant(data)
         this.props.history.push('/all-plants')
       })
   }

@@ -11,55 +11,54 @@ import config from './config'
 
 
 class App extends Component {
-  state = {
-    plantData: [],
-  }
+  // state = {
+  //   plantData: [],
+  // }
 
-  componentDidMount () {
-    fetch(`${config.API_ENDPOINT}/plants`)
-      .then((plantsRes) => {
-        if (!plantsRes.ok) { 
-          return plantsRes.json()
-          .then(e => Promise.reject(e)) 
-        }
-        return plantsRes.json()
-      })
-      .then((plantData) => {
-        this.setState({plantData})
-        console.log(plantData)
-      })
-      .catch(error => {
-        console.error({error}) // eslint-disable-line
-      })
-  }
+  // componentDidMount () {
+  //   fetch(`${config.API_ENDPOINT}/plants`)
+  //     .then((plantsRes) => {
+  //       if (!plantsRes.ok) { 
+  //         return plantsRes.json()
+  //         .then(e => Promise.reject(e)) 
+  //       }
+  //       return plantsRes.json()
+  //     })
+  //     .then((plantData) => {
+  //       this.setState({plantData})
+  //       console.log(plantData)
+  //     })
+  //     .catch(error => {
+  //       console.error({error}) // eslint-disable-line
+  //     })
+  // }
 
-  fetchPlants = () => {
-    fetch(`${config.API_ENDPOINT}/plants`)
-      .then(data => {
-        if (!data.ok) {
-          throw new Error ('Something went wrong.')
-        }
-        return data.json()
-      })
-      .then(data => {
-        this.setState({plantData:data})
-        console.log(data, 'plant data')
-      })
-  }
+  // fetchPlants = () => {
+  //   fetch(`${config.API_ENDPOINT}/plants`)
+  //     .then(data => {
+  //       if (!data.ok) {
+  //         throw new Error ('Something went wrong.')
+  //       }
+  //       return data.json()
+  //     })
+  //     .then(data => {
+  //       this.setState({plantData:data})
+  //       console.log(data, 'plant data')
+  //     })
+  // }
 
-  addPlant = () => {
-    this.fetchPlants()
-  }
+  // addPlant = () => {
+  //   this.fetchPlants()
+  // }
 
 
   render() {
-    const value = {
-      plantData: this.state.plantData,
-      addPlant: this.addPlant,
-    }
+    // const value = {
+    //   plantData: this.state.plantData
+    //   // addPlant: this.addPlant,
+    // }
 
     return (
-      <PlantContext.Provider value={value}>
         <div className="App">
           <nav>
             <NavBar />
@@ -89,7 +88,6 @@ class App extends Component {
             FOOTER HERE
           </footer>
         </div>
-      </PlantContext.Provider>
     );
   }
 }

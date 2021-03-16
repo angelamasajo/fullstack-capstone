@@ -13,6 +13,10 @@ class MyPlantsPage extends Component {
   }
 
   componentDidMount () {
+    this.fetchPlants()
+  }
+
+  fetchPlants = () => {
     fetch(`${config.API_ENDPOINT}/users/1/plants`)
       .then( userPlantsRes => {
         if(!userPlantsRes.ok) {
@@ -40,6 +44,7 @@ class MyPlantsPage extends Component {
       }
     })
       .then(() => {
+        this.fetchPlants()
         this.handleDeleteFromMyList()
         alert('Plant deleted.')
       })
