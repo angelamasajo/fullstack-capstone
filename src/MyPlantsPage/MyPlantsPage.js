@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import PlantContext from '../PlantContext';
 import config from '../config'
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 class MyPlantsPage extends Component {
-  static contextType = PlantContext;
 
   state = {
     myPlants: []
@@ -60,7 +58,6 @@ class MyPlantsPage extends Component {
   renderPlants = () => {
     const myPlants = this.state.myPlants
     return myPlants.map((plant, i) => {
-      // console.log(myPlants, 'myplants')
       return (
         <div key={i} className='MyPlantItem'>
           <h2>{plant.plant_name}</h2>

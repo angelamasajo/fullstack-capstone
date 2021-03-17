@@ -4,7 +4,6 @@ import PlantListItem from '../PlantListItem/PlantListItem';
 
 class PlantList extends Component {
   render () {
-    // console.log(this.props.allPlants)
     const { allPlants } = this.props;
     const list = allPlants.map((file, key) => (
       <PlantListItem 
@@ -14,11 +13,7 @@ class PlantList extends Component {
         history={this.props.history}
     />
     ))
-    // const list = this.props.files
-    //   .filter(file => file.name.toLowerCase().includes(searchTerm.toLowerCase())
-    //     && (filterOption === 'All' || file.plantType === filterOption)
-    //     && (filterOptionTox === 'All' || file.toxicity === filterOptionTox))
-    //   .map((file, key) => <PlantListItem {...file} key={key} />)
+
     return (
       <div className="PlantList">
         <fieldset>
