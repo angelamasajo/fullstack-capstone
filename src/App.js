@@ -6,8 +6,8 @@ import LoginPage from './LoginPage/LoginPage';
 import AllPlantsPage from './AllPlantsPage/AllPlantsPage';
 import MyPlantsPage from './MyPlantsPage/MyPlantsPage';
 import AddPlant from './AddPlant/AddPlant';
-import PlantContext from './PlantContext';
-import config from './config'
+// import PlantContext from './PlantContext';
+// import config from './config'
 
 
 class App extends Component {
