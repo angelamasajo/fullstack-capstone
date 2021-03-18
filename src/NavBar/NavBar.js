@@ -6,6 +6,9 @@ class NavBar extends Component {
   render () {
     return (
       <div className="NavBar">
+          <Link to='/'>
+            HOME          
+          </Link>
           <Link to ="/all-plants">
             ALL PLANTS
           </Link>
@@ -15,10 +18,6 @@ class NavBar extends Component {
           <Link to='/add-plant'>
             ADD PLANT
           </Link>
-          <Link to='/'>
-            SIGN OUT
-          </Link>
-
       </div>
     )
   }

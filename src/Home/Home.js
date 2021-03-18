@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class LoginPage extends Component {
+class Home extends Component {
 
   routeToHome = () => {
       this.props.history.push('/all-plants')
@@ -9,11 +9,20 @@ class LoginPage extends Component {
   render() {
 
     return (
-      <div className="LoginPage">
+      <div className="Home">
         <header>
-          <h1> WELCOME TO PLANTVENTORY</h1>
+          <h1>PLANTVENTORY</h1>
         </header>
-        <form onSubmit={this.routeToHome}>
+        <h2>
+          About
+        </h2>
+        <p>
+          Take care of your plants with ease. 
+          Plantventory allows users to browse through available plants with care details to help plant owners
+          find proper care for plants. By adding plants to the user list, the user can easily keep tabs on their 
+          plants to determine the best care for them.
+          </p>
+        {/* <form onSubmit={this.routeToHome}>
           <fieldset>
             <legend>Log In</legend>
             <label htmlFor='username'>Username</label>
@@ -26,11 +35,11 @@ class LoginPage extends Component {
             </button>
 
           </fieldset>
-        </form>
+        </form> */}
       </div>
 
     )
   }
 }
 
-export default LoginPage;
+export default Home;

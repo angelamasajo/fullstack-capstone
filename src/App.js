@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './NavBar/NavBar';
-import LoginPage from './LoginPage/LoginPage';
+import Home from './Home/Home';
 import AllPlantsPage from './AllPlantsPage/AllPlantsPage';
 import MyPlantsPage from './MyPlantsPage/MyPlantsPage';
 import AddPlant from './AddPlant/AddPlant';
@@ -23,7 +23,7 @@ class App extends Component {
               <Route 
                 exact
                 path='/'
-                component={LoginPage}
+                component={Home}
               />
               <Route
                 path='/all-plants'
