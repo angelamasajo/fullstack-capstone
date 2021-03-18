@@ -3,7 +3,6 @@ import PlantList from "../PlantList/PlantList";
 import SearchFilter from "../SearchFilter/SearchFilter";
 import config from "../config";
 class AllPlantsPage extends Component {
-
   state = {
     searchTerm: "",
     filterOption: "All",
@@ -11,7 +10,7 @@ class AllPlantsPage extends Component {
     plantType: "all",
     plantToxicity: "all",
     plantData: [],
-    filteredData: []
+    filteredData: [],
   };
 
   componentDidMount() {
@@ -33,24 +32,16 @@ class AllPlantsPage extends Component {
   updateSearchTerm(term) {
     this.setState(
       {
-        searchTerm: term
+        searchTerm: term,
       },
       () => {
-        this.filterPlants()
+        this.filterPlants();
       }
-      )
-    // const data = this.state.plantData.filter((file) =>
-    //   file.name.toLowerCase().includes(term.toLowerCase())
-    // );
-    // console.log(data, "search term");
-    // this.setState({
-    //   filteredData: data,
-    //   searchTerm: term,
-    // });
+    );
   }
 
   updateFilterOption(option) {
-    console.log(option, 'option')
+    console.log(option, "option");
     this.setState(
       {
         plantType: option.toLowerCase(),
@@ -60,19 +51,6 @@ class AllPlantsPage extends Component {
         this.filterPlants();
       }
     );
-
-    // this.setState({
-    //   filteredData: this.state.filteredData
-    // }, () => {
-    //   const data = option === 'All'
-    //     ? this.state.plantData
-    //     : this.state.plantData
-    //       .filter(file => file.plant_type.toLowerCase().includes(option.toLowerCase()))
-    //   this.setState({
-    //     filteredData: data,
-    //     filterOption: option,
-    //   })
-    // })
   }
 
   updateFilterOptionTox(tox) {
@@ -85,37 +63,25 @@ class AllPlantsPage extends Component {
         this.filterPlants();
       }
     );
-    // this.setState({
-    //   filteredData: this.state.filteredData
-    // }, () => {
-    //   const data = tox === 'all'
-    //     ? this.state.plantData
-    //     : this.state.plantData
-    //       .filter(file => file.toxicity.toLowerCase().includes(tox.toLowerCase()))
-    //   this.setState({
-    //     filteredData: data,
-    //     filterOptionTox: tox
-    //   })
-    // })
-
   }
 
   filterPlants = () => {
     const { plantType, plantToxicity, plantData, searchTerm } = this.state;
     // console.log(plantType, 'plant type?')
-    console.log(plantData, 'data')
+    console.log(plantData, "data");
     const filter = plantData.filter((plant) => {
       // return plant['id'] === 4
-      console.log(plant["name"].toLowerCase().includes(searchTerm.toLowerCase()))
-      
-      return (
-        (plant["plant_type"].toLowerCase() === plantType || plantType === 'all')
-        &&
-        (plant["toxicity"].toLowerCase() === plantToxicity || plantToxicity === 'all')
-        &&
-        (plant["name"].toLowerCase().includes(searchTerm.toLowerCase()))  
+      console.log(
+        plant["name"].toLowerCase().includes(searchTerm.toLowerCase())
       );
 
+      return (
+        (plant["plant_type"].toLowerCase() === plantType ||
+          plantType === "all") &&
+        (plant["toxicity"].toLowerCase() === plantToxicity ||
+          plantToxicity === "all") &&
+        plant["name"].toLowerCase().includes(searchTerm.toLowerCase())
+      );
     });
     console.log(filter, "filter");
     this.setState({ filteredData: filter });

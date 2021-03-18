@@ -1,25 +1,17 @@
-import React, { Component } from 'react';
-import './NavBar.css'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 class NavBar extends Component {
-  render () {
+  render() {
     return (
       <div className="NavBar">
-          <Link to='/'>
-            HOME          
-          </Link>
-          <Link to ="/all-plants">
-            ALL PLANTS
-          </Link>
-          <Link to='/my-plants'>
-            MY PLANTS
-          </Link>
-          <Link to='/add-plant'>
-            ADD PLANT
-          </Link>
+        <Link to="/">HOME</Link>
+        <Link to="/all-plants">ALL PLANTS</Link>
+        <Link to="/my-plants">MY PLANTS</Link>
+        <Link to="/add-plant">ADD PLANT</Link>
       </div>
-    )
+    );
   }
 }
 

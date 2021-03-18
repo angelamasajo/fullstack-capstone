@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import './SearchFilter.css'
-import SearchBox from '../SearchBox/SearchBox' 
-import FilterOptions from '../FilterOptions/FilterOptions'
+import SearchBox from "../SearchBox/SearchBox";
+import FilterOptions from "../FilterOptions/FilterOptions";
 
 class SearchFilter extends Component {
-  render () {
+  render() {
     return (
       <div className="SearchFilter">
         <div className="SearchFilter__heading">
           <h1>Plants List</h1>
         </div>
         <div className="SearchFilter__controls">
-          <SearchBox 
+          <SearchBox
             searchTerm={this.props.searchTerm}
             handleUpdate={this.props.handleUpdate}
           />
-          <FilterOptions 
+          <FilterOptions
             filterOption={this.props.filterOption}
             handleFilterChange={this.props.handleFilterChange}
             filterOptionTox={this.props.filterOptionTox}
@@ -23,7 +23,7 @@ class SearchFilter extends Component {
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
