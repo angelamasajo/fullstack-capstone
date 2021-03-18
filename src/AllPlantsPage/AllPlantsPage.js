@@ -8,6 +8,8 @@ class AllPlantsPage extends Component {
     searchTerm: "",
     filterOption: "All",
     filterOptionTox: "all",
+    plantType: "all",
+    plantToxicity: "all",
     plantData: [],
     filteredData: []
   };
@@ -29,46 +31,95 @@ class AllPlantsPage extends Component {
   }
 
   updateSearchTerm(term) {
-    const data = this.state.filteredData.filter((file) =>
-      file.name.toLowerCase().includes(term.toLowerCase())
-    );
-    console.log(data, "search term");
-    this.setState({
-      filteredData: data,
-      searchTerm: term,
-    });
+    this.setState(
+      {
+        searchTerm: term
+      },
+      () => {
+        this.filterPlants()
+      }
+      )
+    // const data = this.state.plantData.filter((file) =>
+    //   file.name.toLowerCase().includes(term.toLowerCase())
+    // );
+    // console.log(data, "search term");
+    // this.setState({
+    //   filteredData: data,
+    //   searchTerm: term,
+    // });
   }
 
   updateFilterOption(option) {
-    this.setState({
-      filteredData: this.state.filteredData
-    }, () => {
-      const data = option === 'All'
-        ? this.state.filteredData
-        : this.state.filteredData
-          .filter(file => file.plant_type.toLowerCase().includes(option.toLowerCase()))
-      this.setState({
-        filteredData: data,
+    console.log(option, 'option')
+    this.setState(
+      {
+        plantType: option.toLowerCase(),
         filterOption: option,
-      })
-    })
+      },
+      () => {
+        this.filterPlants();
+      }
+    );
+
+    // this.setState({
+    //   filteredData: this.state.filteredData
+    // }, () => {
+    //   const data = option === 'All'
+    //     ? this.state.plantData
+    //     : this.state.plantData
+    //       .filter(file => file.plant_type.toLowerCase().includes(option.toLowerCase()))
+    //   this.setState({
+    //     filteredData: data,
+    //     filterOption: option,
+    //   })
+    // })
   }
 
   updateFilterOptionTox(tox) {
-    this.setState({
-      filteredData: this.state.filteredData
-    }, () => {
-      const data = tox === 'all'
-        ? this.state.filteredData
-        : this.state.filteredData
-          .filter(file => file.toxicity.toLowerCase().includes(tox.toLowerCase()))
-      this.setState({
-        filteredData: data,
-        filterOptionTox: tox
-      })
-    })
+    this.setState(
+      {
+        plantToxicity: tox.toLowerCase(),
+        filterOptionTox: tox,
+      },
+      () => {
+        this.filterPlants();
+      }
+    );
+    // this.setState({
+    //   filteredData: this.state.filteredData
+    // }, () => {
+    //   const data = tox === 'all'
+    //     ? this.state.plantData
+    //     : this.state.plantData
+    //       .filter(file => file.toxicity.toLowerCase().includes(tox.toLowerCase()))
+    //   this.setState({
+    //     filteredData: data,
+    //     filterOptionTox: tox
+    //   })
+    // })
 
   }
+
+  filterPlants = () => {
+    const { plantType, plantToxicity, plantData, searchTerm } = this.state;
+    // console.log(plantType, 'plant type?')
+    console.log(plantData, 'data')
+    const filter = plantData.filter((plant) => {
+      // return plant['id'] === 4
+      console.log(plant["name"].toLowerCase().includes(searchTerm.toLowerCase()))
+      
+      return (
+        (plant["plant_type"].toLowerCase() === plantType || plantType === 'all')
+        &&
+        (plant["toxicity"].toLowerCase() === plantToxicity || plantToxicity === 'all')
+        &&
+        (plant["name"].toLowerCase().includes(searchTerm.toLowerCase()))  
+      );
+
+    });
+    console.log(filter, "filter");
+    this.setState({ filteredData: filter });
+  };
 
   render() {
     return (
