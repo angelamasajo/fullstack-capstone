@@ -189,7 +189,7 @@ class AddPlant extends Component {
           </section>
 
           <section className="button-section">
-            <button type="submit">Submit</button>
+            <button className='add-plant-button' type="submit">Submit</button>
             {/* <button type="reset">Reset</button> */}
           </section>
         </form>

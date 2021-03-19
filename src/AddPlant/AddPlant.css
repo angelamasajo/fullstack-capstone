@@ -7,3 +7,16 @@ textarea, #title {
   width: 75%;
   padding: 10px;
 }
+
+.button-section {
+  margin-left: 10px;
+}
+
+.add-plant-button {
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color:#25A177;
+  color: white
+}
