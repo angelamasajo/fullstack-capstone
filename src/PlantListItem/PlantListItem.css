@@ -1,0 +1,23 @@
+/* .App > nav {
+  background-color: #4A5D23;
+  padding: 10px;
+}
+
+.App > footer {
+  background-color: #4A5D23;
+  padding: 10px;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.App {
+  background-color: #D0F0C0 ;
+} */
+
+.PlantListItem {
+  border: solid 1px #4A5D23;
+  padding: 0px 20px 20px 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: white;
+}

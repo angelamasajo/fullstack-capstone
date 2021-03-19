@@ -23,7 +23,7 @@ class App extends Component {
             <Route path="/my-plants" component={MyPlantsPage} />
           </Switch>
         </main>
-        <footer>created by angela masajo</footer>
+        <footer>Plantventory by Angela Masajo</footer>
       </div>
     );
   }

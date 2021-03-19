@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import './FilterOptions.css' //add css
+import './FilterOptions.css'
 
 class FilterOptions extends Component {
   render() {
@@ -143,7 +143,7 @@ class FilterOptions extends Component {
                     this.props.handleFilterToxChange(e.target.value)
                   }
                 />
-                Nontoxic
+                Pet-safe
               </label>
             </fieldset>
           </form>

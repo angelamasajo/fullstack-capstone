@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import './ListItem.css'; //add css
+import './PlantListItem.css'; //add css
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import PlantContext from "../PlantContext";

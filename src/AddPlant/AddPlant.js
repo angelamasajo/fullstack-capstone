@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PlantContext from "../PlantContext";
 import config from "../config";
+import './AddPlant.css';
 
 class AddPlant extends Component {
   static contextType = PlantContext;

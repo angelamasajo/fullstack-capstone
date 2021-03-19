@@ -1,0 +1,9 @@
+.form-section {
+  margin: 30px;
+  color: white;
+}
+
+textarea, #title {
+  width: 75%;
+  padding: 10px;
+}
