@@ -20,7 +20,6 @@ class PlantListItem extends Component {
       plant_id: this.props.id,
       user_id: this.state.user_id,
     };
-    console.log(this.props.id);
 
     fetch(`${config.API_ENDPOINT}/users/1/plants`, {
       method: "POST",
@@ -38,15 +37,12 @@ class PlantListItem extends Component {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         this.props.history.push("/my-plants");
       });
   };
 
   render() {
     const { id, name, plant_type, toxicity, care_details } = this.props; // eslint-disable-line
-    // console.log(this.props, 'check')
-    console.log(this.props.id, "plant id check");
     return (
       <div className="PlantListItem">
         <form onSubmit={this.handleAddToMyList}>

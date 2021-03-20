@@ -42,7 +42,6 @@ class AllPlantsPage extends Component {
   }
 
   updateFilterOption(option) {
-    console.log(option, "option");
     this.setState(
       {
         plantType: option.toLowerCase(),
@@ -68,14 +67,7 @@ class AllPlantsPage extends Component {
 
   filterPlants = () => {
     const { plantType, plantToxicity, plantData, searchTerm } = this.state;
-    // console.log(plantType, 'plant type?')
-    console.log(plantData, "data");
     const filter = plantData.filter((plant) => {
-      // return plant['id'] === 4
-      console.log(
-        plant["name"].toLowerCase().includes(searchTerm.toLowerCase())
-      );
-
       return (
         (plant["plant_type"].toLowerCase() === plantType ||
           plantType === "all") &&
@@ -84,7 +76,6 @@ class AllPlantsPage extends Component {
         plant["name"].toLowerCase().includes(searchTerm.toLowerCase())
       );
     });
-    console.log(filter, "filter");
     this.setState({ filteredData: filter });
   };
 

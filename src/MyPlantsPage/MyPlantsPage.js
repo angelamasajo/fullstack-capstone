@@ -23,7 +23,6 @@ class MyPlantsPage extends Component {
       })
       .then((myPlants) => {
         this.setState({ myPlants });
-        console.log(myPlants);
       })
       .catch((error) => {
         console.error({ error }); // eslint-disable-line
@@ -31,8 +30,6 @@ class MyPlantsPage extends Component {
   };
 
   deleteFromMyList = (e, plant_id) => {
-    console.log(plant_id, "check id");
-
     fetch(`${config.API_ENDPOINT}/users/1/plants/${plant_id}`, {
       method: "DELETE",
       headers: {
