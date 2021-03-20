@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PlantContext from "../PlantContext";
 import config from "../config";
-import './AddPlant.css';
+import "./AddPlant.css";
 
 class AddPlant extends Component {
   static contextType = PlantContext;
@@ -189,8 +189,9 @@ class AddPlant extends Component {
           </section>
 
           <section className="button-section">
-            <button className='add-plant-button' type="submit">Submit</button>
-            {/* <button type="reset">Reset</button> */}
+            <button className="add-plant-button" type="submit">
+              Submit
+            </button>
           </section>
         </form>
       </div>

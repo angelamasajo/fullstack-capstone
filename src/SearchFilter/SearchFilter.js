@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './SearchFilter.css'
+import "./SearchFilter.css";
 import SearchBox from "../SearchBox/SearchBox";
 import FilterOptions from "../FilterOptions/FilterOptions";
 
@@ -8,7 +8,7 @@ class SearchFilter extends Component {
     return (
       <div className="SearchFilter">
         <div className="SearchFilter__heading">
-          <h1>Plants List</h1>
+          <h1>All Plants</h1>
         </div>
         <div className="SearchFilter__controls">
           <SearchBox

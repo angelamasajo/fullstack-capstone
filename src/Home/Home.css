@@ -1,8 +1,16 @@
-.HomeAbout, .HomeDescription {
-  color: white;
-  margin: 30px;
-}
 
 .HomePageButton {
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color:#25A177;
+  color: white
+}
+
+.HomeDiv {
   margin: 30px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  padding: 4px 20px 20px 20px;
 }

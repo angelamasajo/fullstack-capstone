@@ -16,8 +16,12 @@ class App extends Component {
         </nav>
         <main>
           <Switch>
-            <Route exact path="/" component={Home} history={this.props.history}
-/>
+            <Route
+              exact
+              path="/"
+              component={Home}
+              history={this.props.history}
+            />
             <Route path="/all-plants" component={AllPlantsPage} />
             <Route path="/add-plant" component={AddPlant} />
             <Route path="/my-plants" component={MyPlantsPage} />

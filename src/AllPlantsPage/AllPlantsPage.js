@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PlantList from "../PlantList/PlantList";
 import SearchFilter from "../SearchFilter/SearchFilter";
 import config from "../config";
+
 class AllPlantsPage extends Component {
   state = {
     searchTerm: "",

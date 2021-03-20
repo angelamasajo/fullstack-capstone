@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import config from "../config";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import './MyPlantsPage.css'
+import "./MyPlantsPage.css";
 
 class MyPlantsPage extends Component {
   state = {

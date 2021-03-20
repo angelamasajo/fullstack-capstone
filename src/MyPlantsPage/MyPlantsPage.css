@@ -10,3 +10,11 @@ legend {
   color: white;
   font-size:larger;
 }
+
+.DeletePlant__button {
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color:#25A177;
+  color: white
+}
