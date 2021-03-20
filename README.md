@@ -43,12 +43,12 @@ Users can contribute plants to the database and add to their list if they so wis
 ### Endpoints
 
 #### /api/plants
-GET: access to all the plants
-POST: allow users post plants to database
+- GET: access to all the plants
+- POST: allow users post plants to database
 
 #### /api/users/1/plants
-GET: access demo user plants
-POST: post plants from all plants to user plants
+- GET: access demo user plants
+- POST: post plants from all plants to user plants
 
 #### /api/users/1/plants/:plant_id
-DELETE: allow users to delete plants from user list
+- DELETE: allow users to delete plants from user list
