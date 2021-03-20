@@ -17,15 +17,18 @@ This is the introduction located on the main page, explaining what Plantventory 
 
 
 ### All Plants Page
+![allplants_page](/app-screenshots/plantventory-allplants.png)
 This page manages the full list of plants in the database, where users can add plants in their user list. It can also filter through the list of plants via search box and filters for plant type and toxicity.
 
 ### My Plants Page
+![myplants_page](/app-screenshots/plantventory-myplants.png)
+
 The demo user can see their own plant inventory in this page, including information about toxicity, plant type, and care details for each plant.
 
 ### Add Plant Page
+![addplant_page](/app-screenshots/plantventory-addplant.png)
 Users can contribute plants to the database and add to their list if they so wish. It provides options for plant type, toxicity, and area for care details as well.
 
 Documentation of your API.
-Screenshot(s) of your app. This makes your app description much easier to understand.
-A summary section. This should have a concise explanation of what your app does. Try to frame this from the standpoint of what the user does, or what the app enables for the user.
+
 A section on the technology used.
