@@ -29,6 +29,26 @@ The demo user can see their own plant inventory in this page, including informat
 ![addplant_page](/app-screenshots/plantventory-addplant.png)
 Users can contribute plants to the database and add to their list if they so wish. It provides options for plant type, toxicity, and area for care details as well.
 
-Documentation of your API.
 
-A section on the technology used.
+## Technology Used
+- HTML, CSS
+- React
+- Node
+- Express
+- PostgreSQL
+
+
+## API Documentation
+
+### Endpoints
+
+#### /api/plants
+GET: access to all the plants
+POST: allow users post plants to database
+
+#### /api/users/1/plants
+GET: access demo user plants
+POST: post plants from all plants to user plants
+
+#### /api/users/1/plants/:plant_id
+DELETE: allow users to delete plants from user list
