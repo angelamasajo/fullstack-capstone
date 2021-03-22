@@ -11,9 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav>
-          <NavBar />
-        </nav>
+        <NavBar />
         <main>
           <Switch>
             <Route

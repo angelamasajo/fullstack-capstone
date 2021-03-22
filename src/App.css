@@ -1,15 +1,8 @@
-.App > nav {
-  background-color: #0E2B22;
-  padding: 20px;
-  font-size: 20px;
-  font-size: large;
-}
-
 .App > footer {
-  background-color: #0E2B22;
+  background-color: #0e2b22;
   padding: 20px;
   color: white;
-  margin-bottom: 0px;
+  bottom: 0px;
   font-size: 20px;
 }
 

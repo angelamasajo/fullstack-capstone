@@ -79,6 +79,7 @@ class AddPlant extends Component {
 
             <textarea
               name="summary"
+              id="summary"
               rows="15"
               value={this.state.summary}
               placeholder="i.e., Thrives in bright to medium indirect light. Not suited for intense, direct sun but can be acclimated to withstand it. Water every 1-2 weeks, allowing soil to dry out between waterings. Expect to water more often in brighter light and less often in lower light. Monsteras can benefit from filtered water or leaving water out overnight before using. "
