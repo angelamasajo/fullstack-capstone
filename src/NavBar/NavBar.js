@@ -9,16 +9,24 @@ class NavBar extends Component {
         <nav>
           <ul className="nav">
             <li>
-              <NavLink exact activeClassName="current" to="/">HOME</NavLink>
+              <NavLink exact activeClassName="current" to="/">
+                HOME
+              </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="current" to="/all-plants">ALL PLANTS</NavLink>
+              <NavLink activeClassName="current" to="/all-plants">
+                ALL PLANTS
+              </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="current" to="/my-plants">MY PLANTS</NavLink>
+              <NavLink activeClassName="current" to="/my-plants">
+                MY PLANTS
+              </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="current" to="/add-plant">ADD PLANT</NavLink>
+              <NavLink activeClassName="current" to="/add-plant">
+                ADD PLANT
+              </NavLink>
             </li>
           </ul>
         </nav>

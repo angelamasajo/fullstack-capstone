@@ -15,7 +15,6 @@
   color: white;
 }
 
-
 .nav {
   display: flex;
   list-style: none;
@@ -38,7 +37,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .nav{
+  .nav {
     display: flex;
     flex-direction: column;
   }
