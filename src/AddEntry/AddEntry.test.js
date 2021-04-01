@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PlantList from "./PlantList";
+import AddEntry from "./AddEntry";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<PlantList allPlants={[]} />, div);
+  ReactDOM.render(<AddEntry />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

@@ -4,7 +4,7 @@ import "./FilterOptions.css";
 class FilterOptions extends Component {
   render() {
     const { filterOption } = this.props;
-    const { filterOptionTox } = this.props;
+    // const { filterOptionTox } = this.props;
     return (
       <div className="FilterOptions">
         <div className="Filtering_Type">
@@ -23,83 +23,125 @@ class FilterOptions extends Component {
                     this.props.handleFilterChange(e.target.value)
                   }
                 />
-                All
+                all
               </label>
 
-              <label htmlFor="filter_succulent">
+              <label htmlFor="filter_happy">
                 <input
                   type="radio"
-                  value="Succulent"
-                  id="filter_succulent"
+                  value="happy"
+                  id="filter_happy"
                   name="filterType"
-                  checked={filterOption === "Succulent"}
+                  checked={filterOption === "happy"}
                   onChange={(e) =>
                     this.props.handleFilterChange(e.target.value)
                   }
                 />
-                Succulent
+                happy
               </label>
 
-              <label htmlFor="filter_tropical">
+              <label htmlFor="filter_sad">
                 <input
                   type="radio"
-                  value="Tropical"
-                  id="filter_tropical"
+                  value="sad"
+                  id="filter_sad"
                   name="filterType"
-                  checked={filterOption === "Tropical"}
+                  checked={filterOption === "sad"}
                   onChange={(e) =>
                     this.props.handleFilterChange(e.target.value)
                   }
                 />
-                Tropical
+                sad
               </label>
 
-              <label htmlFor="filter_holiday">
+              <label htmlFor="filter_content">
                 <input
                   type="radio"
-                  value="Holiday"
-                  id="filter_holiday"
+                  value="content"
+                  id="filter_content"
                   name="filterType"
-                  checked={filterOption === "Holiday"}
+                  checked={filterOption === "content"}
                   onChange={(e) =>
                     this.props.handleFilterChange(e.target.value)
                   }
                 />
-                Holiday
+                content
               </label>
 
-              <label htmlFor="filter_trailing">
+              <label htmlFor="filter_angry">
                 <input
                   type="radio"
-                  value="Trailing"
-                  id="filter_trailing"
+                  value="angry"
+                  id="filter_angry"
                   name="filterType"
-                  checked={filterOption === "Trailing"}
+                  checked={filterOption === "angry"}
                   onChange={(e) =>
                     this.props.handleFilterChange(e.target.value)
                   }
                 />
-                Trailing
+                angry
+              </label>
+
+              <label htmlFor="filter_frustrated">
+                <input
+                  type="radio"
+                  value="frustrated"
+                  id="filter_frustrated"
+                  name="filterType"
+                  checked={filterOption === "frustrated"}
+                  onChange={(e) =>
+                    this.props.handleFilterChange(e.target.value)
+                  }
+                />
+                frustrated
+              </label>
+
+              <label htmlFor="filter_anxious">
+                <input
+                  type="radio"
+                  value="anxious"
+                  id="filter_anxious"
+                  name="filterType"
+                  checked={filterOption === "anxious"}
+                  onChange={(e) =>
+                    this.props.handleFilterChange(e.target.value)
+                  }
+                />
+                anxious
+              </label>
+
+              <label htmlFor="filter_excited">
+                <input
+                  type="radio"
+                  value="excited"
+                  id="filter_excited"
+                  name="filterType"
+                  checked={filterOption === "excited"}
+                  onChange={(e) =>
+                    this.props.handleFilterChange(e.target.value)
+                  }
+                />
+                excited
               </label>
 
               <label htmlFor="filter_other">
                 <input
                   type="radio"
-                  value="Other"
+                  value="other"
                   id="filter_other"
                   name="filterType"
-                  checked={filterOption === "Other"}
+                  checked={filterOption === "other"}
                   onChange={(e) =>
                     this.props.handleFilterChange(e.target.value)
                   }
                 />
-                Other
+                other
               </label>
             </fieldset>
           </form>
         </div>
 
-        <div className="Filtering_Toxicity">
+        {/* <div className="Filtering_Toxicity">
           <form>
             <fieldset>
               <legend>Toxicity</legend>
@@ -147,7 +189,7 @@ class FilterOptions extends Component {
               </label>
             </fieldset>
           </form>
-        </div>
+        </div> */}
       </div>
     );
   }
