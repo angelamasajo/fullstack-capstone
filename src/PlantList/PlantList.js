@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import PlantListItem from "../EntryListItem/EntryListItem";
-import "./EntryList.css";
+import PlantListItem from "../PlantListItem/PlantListItem";
+import "./PlantList.css";
 
-class EntryList extends Component {
+class PlantList extends Component {
   render() {
-    const { allEntries } = this.props;
-    const list = allEntries.map((file, key) => (
+    const { allPlants } = this.props;
+    const list = allPlants.map((file, key) => (
       <PlantListItem
         {...file}
         key={key}
@@ -25,8 +25,8 @@ class EntryList extends Component {
   }
 }
 
-EntryList.defaultProps = {
+PlantList.defaultProps = {
   files: [],
 };
 
-export default EntryList;
+export default PlantList;

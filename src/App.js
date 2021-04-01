@@ -3,9 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavBar from "./NavBar/NavBar";
 import Home from "./Home/Home";
-import AllEntriesPage from "./AllEntriesPage/AllEntriesPage";
-// import MyPlantsPage from "./MyPlantsPage/MyPlantsPage";
-import AddEntry from "./AddEntry/AddEntry";
+import AllPlantsPage from "./AllPlantsPage/AllPlantsPage";
+import MyPlantsPage from "./MyPlantsPage/MyPlantsPage";
+import AddPlant from "./AddPlant/AddPlant";
 
 class App extends Component {
   render() {
@@ -20,12 +20,12 @@ class App extends Component {
               component={Home}
               history={this.props.history}
             />
-            <Route path="/all-entries" component={AllEntriesPage} />
-            <Route path="/add-entry" component={AddEntry} />
-            {/* <Route path="/my-plants" component={MyPlantsPage} /> */}
+            <Route path="/all-plants" component={AllPlantsPage} />
+            <Route path="/add-plant" component={AddPlant} />
+            <Route path="/my-plants" component={MyPlantsPage} />
           </Switch>
         </main>
-        <footer>Moodly by Angela Masajo</footer>
+        <footer>Plantventory by Angela Masajo</footer>
       </div>
     );
   }
